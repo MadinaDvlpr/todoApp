@@ -7,7 +7,7 @@
 -->
 <!-- HEADER README -->
 <div align="center">  
-  <h1>Legarant Application Connectée Salesforce</h1></br></br>
+  <h1>Todo Application</h1></br></br>
    <img margin-bottom="3em" src="/images/img-header.png" alt="HEADER PROJECT" width="950" height="500">
 
 
