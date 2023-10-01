@@ -1,0 +1,451 @@
+/* =============RESET=========== */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+margin: 0;
+}
+
+*,
+*::before,
+*::after {
+font-family: inherit;
+box-sizing: border-box;
+}
+
+
+/* =============VARIABLES=========== */
+:root {
+  --Green:#61DBD1;
+  --Dark-Grey: hsl(0, 0%, 15%);
+  --Deep-Blue: hsl(243, 66%, 59%); 
+  --Blue: hsl(243, 66%, 59%);
+  --Purple:hsl(276, 51%, 47%);
+  --Pink: 	hsl(326, 57%, 48%);
+  --Fushia: 	hsl(340, 75%, 54%);
+  --Light-Grey:#E5E5E5;
+  --heading-font-family:'Saira',Helvetica;
+  --text-font-family:'Lato', sans-serif; 
+  --Black:	hsl(0, 0%, 0%);
+  --White:hsl(220, 23%, 97%);
+  --ff-text: 'Poppins', sans-serif;
+  --ff-headings: Arial, sans-serif;
+  --body-color: hsl(220, 23%, 97%);
+  --nav-color: hsl(220, 23%, 97%) ;
+  --side-nav: #010718;
+  --text-color:hsl(0, 0%, 0%);
+  --search-bar: #F2F2F2;
+  --search-text: #010718;
+  --background-horizontal: linear-gradient(0deg, rgba(64,93,230,1) 0%, rgba(88,81,219,1) 30%, rgba(131,58,180,1) 57%, rgba(193,53,132,1) 78%, rgba(193,48,108,1) 100%);
+  --background-vertical: linear-gradient(90deg, rgba(64,93,230,1) 0%, rgba(88,81,219,1) 35%, rgba(131,58,180,1) 53%, rgba(193,53,132,1) 70%, rgba(225,48,108,1) 100%);
+  --fs-xl: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+  --fs-600: clamp(0.7rem, 2vw + 1rem, 1.5rem);
+  --fs-400: clamp(0.5rem, 1.7vw + 1rem, 1rem);
+  --fs-xs: clamp(.375rem, 1vw + 1rem, .75rem);
+--spacer:2rem;
+--size:.75em;
+}
+
+
+
+
+/* =============GENERAL STYLING=========== */
+body {
+margin: 0;
+font-family: "Work Sans", sans-serif;
+font-weight: 300;
+font-size: 1.5rem;
+color: var(--text-color);
+background: url('../img/bg-todo.jpg');
+background-repeat:  no-repeat ;
+background-size: cover;
+display: grid;
+grid-template-areas: "header header header header"
+                      ". lists  active-box .";
+grid-template-columns:    5vw minmax(15vw, 30vw) minmax(30vw, 50vw) 5vw; /*set up des 4 colonnes*/
+gap: 1.5rem;
+margin-bottom: 5rem;
+}
+/* =============STYLES=========== */
+.title{
+grid-area: header;
+text-align: center;
+font-size: var(--fs-xl); /*taille max et taille minimum que peut prendre le titre permet d'avaoir une taille responsive*/
+font-weight: 700;
+color:var(--White)
+}
+
+.all-tasks{
+grid-area: lists;
+background: transparent;
+border-radius: 8px;
+height: 100%;
+color: var(--text-color);
+min-width: 30vw;
+min-height: 50vh;
+background: rgba( 244, 244, 244, 0.6 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+display: flex;
+flex-direction: column;
+align-items: stretch;
+justify-content: flex-start;
+}
+.content label{
+  color: var(--text-color);
+}
+.task-list{
+font-size: var(--fs-600);
+line-height: 1.7;
+list-style: circle;
+padding-left: 1.1em;
+}
+.list-header{
+background: var(--Blue);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+padding: 1rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+color: var(--White);
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+min-height: 5rem;
+}
+.list-body{
+padding: 1rem;
+}
+.list-name{
+cursor: pointer;
+}
+.list-name:hover{
+opacity:.7;
+}
+#list-form{
+display: flex;
+align-items: center;
+/* flex-direction: column; */
+}
+#task-form{
+display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 3vh;
+  margin-bottom: 2rem;
+  /* gap: 0.5rem; */
+  flex-wrap: nowrap;
+  width: 70%;
+}
+
+#task-form :nth-child(1){
+max-width: 100%;
+}
+.btn{
+cursor: pointer;
+background: transparent;
+border: 0;
+padding: .7rem;
+color: var(--White);
+font-size: 1rem;
+border-radius: 8px;
+
+}
+
+.btn:focus{
+transform: scale(1.2);
+}
+.task .content .text:not(:read-only) {
+color: var(--text-color);
+}
+
+.btn.create{
+font-weight: 900;
+transition: opacity 200ms ease-in;
+background: transparent;  
+color: var(--Blue)!important;
+}
+
+.btn.delete:hover,
+.btn.create:hover{
+opacity:.7;
+}
+
+
+
+.btn.delete {
+font-weight: 900;
+transition: opacity 200ms ease-in;
+background: transparent;  
+color: var(--Pink)!important;
+
+}
+
+
+
+.task .actions {
+display: flex;
+margin: 0 -0.5rem;
+}
+
+.task .actions button {
+cursor: pointer;
+margin: 0 0.5rem;
+font-size: var(--fs-600);
+font-weight: 700;
+text-transform: uppercase;
+transition: 0.4s;
+border: none;
+background: transparent;
+}
+
+.task .actions button:hover {
+opacity: 0.8;
+}
+
+.task .actions button:active {
+opacity: 0.6;
+}
+
+.task .actions .edit {
+background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,17,1) 61%, rgb(3, 97, 116) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.task .actions .delete {
+background-image: linear-gradient(90deg, rgba(62,2,10,1) 0%, rgba(121,9,24,1) 61%, rgba(255,0,0,1) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+/* .create-task,
+.create-list{
+margin-top: 2rem;
+} */
+/* .create-task{
+margin-left: 1.5rem ;
+} */
+.new{
+background: transparent;
+color: var(--text-color);
+font-size: inherit;
+border: 1px solid var(--White); 
+outline: none;
+transition: border 200ms ease-in;
+padding: .25em;
+width: 100%;
+}
+.new::placeholder{
+opacity: .4;
+}
+.new:focus{
+border-width: 2px;
+}
+.new:focus::placeholder{
+opacity: 0.2;
+}
+
+.new.list,
+.new.task{
+font-size: var(--fs-600);
+margin-bottom: 0;
+}
+
+
+.active-list{
+font-weight: 700;
+}
+.todo-list{
+
+grid-area: active-box;
+
+color: var(--White);
+border-radius: 8px;
+min-width: 50vw;
+background: rgba( 244, 244, 244, 0.6 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.list-controls{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.list-controls > *{
+flex: 0 0 30%;
+}
+ion-icon {
+font-size: 1.5rem;
+}
+.todo-header{
+background: var(--Fushia);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+padding: 1rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+color: var(--clr-light);
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+min-height: 5rem;
+}
+.list-title{
+margin: 0;
+margin: 0 1em 0 0;
+}
+
+.task-count{
+margin: 0;
+font-size: var(--fs-400);
+}
+
+.todo-body{
+padding: 2rem 1rem;
+height: auto;
+}
+
+.new-task-creator .create{
+color: var(--text-color);
+}
+.new-task-creator{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+[type="checkbox"]{
+opacity: 0; /* je cache toutes les checkbox via l'opacité*/
+position: absolute; /* position absolute jette les checkbox hors du cadre de la page web cette technique permet de pouvoir toujours interagir a=sur les checkbox contrairement à un display none*/
+}
+.task #label{
+display: flex-inline;
+align-items: center;
+margin-right: var(--size);
+position: relative;
+min-width: 70%;
+}
+.task{
+
+margin-bottom: 1.5em;
+display: flex;
+align-items: center;
+
+}
+.list{
+display: flex;
+align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+  max-height: 2rem;
+}
+
+.custom-checkbox{
+display: inline-block;
+width: var(--size);
+height: var(--size);
+cursor: pointer;
+border: 2px solid var(--text-color);
+border-radius: 50%;
+margin-right: var(--size);
+transform: scale(1);
+-webkit-transform: scale(1);
+transition: transform 200ms ease-in;
+}
+
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus + label .custom-checkbox{ /*permet de permettre le controle via la tabulation*/
+transform: scale(1.2);  /* dès que je vais faire un hover sur le texte ou la chackbox alors la checkbox sera zoomée*/
+-webkit-transform: scale(1.2);
+color: var(--White);
+}
+
+[type="checkbox"]:checked + label .custom-checkbox{
+background: var(--Blue);
+border-color: var(--Blue);
+box-shadow: inset 0 0 0px 3px var(--White);
+}
+
+[type="checkbox"]:checked + label{
+opacity: 0.5;
+text-decoration: line-through;
+}
+
+
+
+.delete-controls{
+display: flex;
+ /*justify-content: space-evenly;
+position: fixed;
+width: 100%;
+left: 0;
+bottom: 1rem;
+margin-top: 2rem; */
+color: var(--Green);
+font-weight: 700;
+/* padding-top: 30rem;
+height: 8rem; */
+width: 30%;
+}
+
+.btn.edit{
+opacity: .7;
+font-size: var(--fs-400);
+transition: color 200ms;
+color: var(--Blue);
+
+background: none;
+}
+
+.btn.delete:hover{
+color: var(--Pink);
+}
+
+.btn.edit:hover{
+color: var(--Green);
+
+}
+
+
+/* =============MEDIA QUERIES=========== */
+
+
+@media screen and (max-width:768px){
+
+body{
+grid-template-areas: "header header header"
+                      ". lists ."
+                      ". active-box .";
+grid-template-columns:    1fr minmax(15.625rem, 31.25rem) 1fr; /*set up des 4 colonnes*/
+gap: 1.5rem;
+}
+
+
+.delete-controls{
+bottom: -50px;
+}
+}
+
+  
+
+
+
+
+
