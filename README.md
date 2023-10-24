@@ -8,7 +8,7 @@
 <!-- HEADER README -->
 <div align="center">  
   <h1>Todo Application</h1></br></br>
-   <img margin-bottom="3em" src="/images/img-header.png" alt="HEADER PROJECT" width="950" height="500">
+   <img margin-bottom="3em" src="/images/todo-md.png" alt="HEADER PROJECT" width="950" height="500">
 
 
 | 👩‍💼Contributors      |📅 Release Date             |🛠    Build              |🧪 Social  |
@@ -38,31 +38,16 @@ This project is one of the first javascript project I worked on as a student.
 This is Vanilla Javascript project. 
 
 
-## How to test the app ?
+### Using the web app
 
-### download the files on your machine 
+Download the git files or simply go to my portfolio here :</br>
 
-Go to the files and click on download.
-
-
+<a href="https://madinadvlpr.github.io/madina_dvlpr.github.io/todo2.html">
+  <img width="150px" alt="Deploy to Salesforce"
+       src="assets/img/btn-md.png">
+</a>
+</br>
 
 Now you are all set to try out the app ! 
 
 
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[![LinkedIn][linkedin-url]
-[contributors-shield]: (https://img.shields.io/badge/1?label=CONTRIBUTORS&labelColor=%236B7176&color=%2361DBD1)
-[contributors-url]: https://github.com/MadinaDvlpr/
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: linkedin.com/in/magdalenalarmet-salesforce-developpeur/
-[product-screenshot]: /images/repo.png
